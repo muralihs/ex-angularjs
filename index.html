@@ -1,7 +1,32 @@
-<!DOCTYPE>
-<html>
-    <head>
-        <title></title>
-    </head>
-    <body></body>
+<html ng-app='devicesModule'>
+	<head>
+		<title>Check out your device</title>
+		<link rel="stylesheet" href="app/resources/bootstrap.css" />
+	</head>
+	<body>
+		<h2>List of Devices</h2>
+		<div ng-controller="deviceListController">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Asset Tag</th>
+						<th>Owner</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="item in devices">
+						<td>{{item.name}}</td>
+						<td>{{item.assetTag}}</td>
+						<td>{{item.owner}}</td>
+						<td>{{item.desc}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<script src="app/lib/angular.min.js"></script>
+		<script src="app/cotd.js"></script>
+	</body>
+
 </html>
